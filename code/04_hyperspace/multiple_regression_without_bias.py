@@ -2,7 +2,7 @@ import numpy as np
 
 
 def predict(X, w):
-    return np.matmul(X, w)
+    return np.matmul(X, w)  # Matrix product of two arrays.
 
 
 def loss(X, Y, w):
