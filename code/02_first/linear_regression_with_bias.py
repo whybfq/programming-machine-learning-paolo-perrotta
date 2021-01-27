@@ -33,7 +33,7 @@ def train(X, Y, iterations, lr):
 X, Y = np.loadtxt("pizza.txt", skiprows=1, unpack=True)
 
 # Train the system
-w, b = train(X, Y, iterations=10000, lr=0.01)
+w, b = train(X, Y, iterations=100000, lr=0.001)
 print("\nw=%.3f, b=%.3f" % (w, b))
 
 # Predict the number of pizzas

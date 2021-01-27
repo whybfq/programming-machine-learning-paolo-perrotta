@@ -11,5 +11,5 @@ plt.yticks(fontsize=15)                                  # set y axis ticks
 plt.xlabel("Reservations", fontsize=30)                  # set x axis label
 plt.ylabel("Pizzas", fontsize=30)                        # set y axis label
 X, Y = np.loadtxt("pizza.txt", skiprows=1, unpack=True)  # load data
-plt.plot(X, Y, "bo")                                     # plot data
+plt.plot(X, Y, "bo")                                     # plot data (as blue circles)
 plt.show()                                               # display chart

@@ -1,3 +1,7 @@
+# compared with the linear_regression_with_bias.py
+# use the same lr ( 0.001)
+# Higher Precision in almost one tenth of the iterations
+
 import numpy as np
 
 
@@ -26,6 +30,6 @@ def train(X, Y, iterations, lr):
 
 
 X, Y = np.loadtxt("pizza.txt", skiprows=1, unpack=True)
-w, b = train(X, Y, iterations=20000, lr=0.001)
+w, b = train(X, Y, iterations=20000, lr=0.0001)
 print("\nw=%.10f, b=%.10f" % (w, b))
 print("Prediction: x=%d => y=%.2f" % (20, predict(20, w, b)))
