@@ -16,7 +16,8 @@ def gradient(X, Y, w):
 def train(X, Y, iterations, lr):
     w = np.zeros((X.shape[1], 1))
     for i in range(iterations):
-        print("Iteration %4d => Loss: %.20f" % (i, loss(X, Y, w)))
+        if i % 1000 == 0:
+            print("Iteration %4d => Loss: %.20f" % (i, loss(X, Y, w)))
         w -= gradient(X, Y, w) * lr
     return w
 
