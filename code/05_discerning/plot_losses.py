@@ -63,7 +63,7 @@ ax.plot_surface(W1, W2, L, cmap=cm.autumn, edgecolors='black',
                 vmax=np.max(L), linewidth=0.2, antialiased=True)
 plt.ion()
 plt.show()
-input("Press <Enter>...")
+input("Press <Enter> sth to show the Log Loss...")
 
 # Plot logarithmic loss
 ax = prepare_axes()
