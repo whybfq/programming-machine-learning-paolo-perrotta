@@ -4,7 +4,7 @@ import mnist
 import numpy as np
 import matplotlib.pyplot as plt
 
-DIGIT = 5
+DIGIT = 5  # print the digit 5 graphic
 
 X = mnist.load_images("../data/mnist/train-images-idx3-ubyte.gz")
 Y = mnist.load_labels("../data/mnist/train-labels-idx1-ubyte.gz").flatten()

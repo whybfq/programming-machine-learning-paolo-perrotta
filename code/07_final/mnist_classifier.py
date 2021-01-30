@@ -27,7 +27,7 @@ def gradient(X, Y, w):
     return np.matmul(X.T, (forward(X, w) - Y)) / X.shape[0]
 
 
-def report(iteration, X_train, Y_train, X_test, Y_test, w):
+def report(iteration, X_train, Y_train, X_test, Y_test, w):  # logs the pecentange of correct results
     matches = np.count_nonzero(classify(X_test, w) == Y_test)
     n_test_examples = Y_test.shape[0]
     matches = matches * 100.0 / n_test_examples

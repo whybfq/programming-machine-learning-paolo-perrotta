@@ -35,6 +35,7 @@ SIZE_OF_TRAINING_SET = 160  # Keep the remaining 48 elements for testing
 X_train, X_test = np.vsplit(X, [SIZE_OF_TRAINING_SET])
 Y_train_unencoded, Y_test = np.vsplit(Y_unencoded, [SIZE_OF_TRAINING_SET])
 
+
 # One hot encode the training set, but not the test set:
 def one_hot_encode(Y):
     n_labels = Y.shape[0]
@@ -44,5 +45,6 @@ def one_hot_encode(Y):
         label = Y[i]
         encoded_Y[i][label] = 1
     return encoded_Y
+
 
 Y_train = one_hot_encode(Y_train_unencoded)
