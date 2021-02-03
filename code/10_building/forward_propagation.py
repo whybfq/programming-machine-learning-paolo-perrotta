@@ -19,8 +19,8 @@ def prepend_bias(X):
 
 
 def forward(X, w1, w2):
-    h = sigmoid(np.matmul(prepend_bias(X), w1))
-    y_hat = softmax(np.matmul(prepend_bias(h), w2))
+    h = sigmoid(np.matmul(prepend_bias(X), w1))  # hidden layer
+    y_hat = softmax(np.matmul(prepend_bias(h), w2))  # output layer
     return y_hat
 
 
