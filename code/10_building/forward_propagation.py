@@ -26,11 +26,16 @@ def forward(X, w1, w2):
 
 def classify(X, w1, w2):
     y_hat = forward(X, w1, w2)
-    labels = np.argmax(y_hat, axis=1)
+    labels = np.argmax(y_hat, axis=1)  # find the most likely prediction in each row
     return labels.reshape(-1, 1)
 
 
 def report(iteration, X_train, Y_train, X_test, Y_test, w1, w2):
+    """
+    : print the current loss()
+    This function can be called either during the classification phase or training phase
+    :ivar
+    """
     y_hat = forward(X_train, w1, w2)
     training_loss = loss(Y_train, y_hat)
     classifications = classify(X_test, w1, w2)

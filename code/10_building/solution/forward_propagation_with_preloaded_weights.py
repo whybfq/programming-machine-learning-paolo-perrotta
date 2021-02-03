@@ -10,7 +10,7 @@ def softmax(logits):
     return exponentials / np.sum(exponentials, axis=1).reshape(-1, 1)
 
 
-def loss(Y, y_hat):
+def loss(Y, y_hat):  # the cross-entropy loss
     return -np.sum(Y * np.log(y_hat)) / Y.shape[0]
 
 
@@ -45,4 +45,4 @@ with open('../weights.json') as f:
 w1, w2 = (np.array(weights[0]), np.array(weights[1]))
 
 import mnist
-report(0, mnist.X_train, mnist.Y_train, mnist.X_test, mnist.Y_test, w1, w2)
+report(1000, mnist.X_train, mnist.Y_train, mnist.X_test, mnist.Y_test, w1, w2)
