@@ -42,3 +42,12 @@ def report(iteration, X_train, Y_train, X_test, Y_test, w1, w2):
     accuracy = np.average(classifications == Y_test) * 100.0
     print("Iteration: %5d, Loss: %.6f, Accuracy: %.2f%%" %
           (iteration, training_loss, accuracy))
+
+
+import json
+with open('weights.json') as f:
+    weights = json.load(f)
+w1, w2 = (np.array(weights[0]), np.array(weights[1]))
+
+import mnist
+report(0, mnist.X_train, mnist.Y_train, mnist.X_test, mnist.Y_test, w1, w2)

@@ -1,5 +1,6 @@
 # A neural network with backpropagation.
 
+import mnist
 import numpy as np
 
 
@@ -17,7 +18,7 @@ def sigmoid_gradient(sigmoid):
 
 
 def loss(Y, y_hat):
-    return -np.sum(Y * np.log(y_hat)) / Y.shape[0]
+    return -np.sum(Y * np.log(y_hat)) / Y.shape[ 0 ]
 
 
 def prepend_bias(X):
@@ -31,10 +32,10 @@ def forward(X, w1, w2):
 
 
 def back(X, Y, y_hat, w2, h):
-    w2_gradient = np.matmul(prepend_bias(h).T, y_hat - Y) / X.shape[0]
+    w2_gradient = np.matmul(prepend_bias(h).T, y_hat - Y) / X.shape[ 0 ]
 
-    a_gradient = np.matmul(y_hat - Y, w2[1:].T) * sigmoid_gradient(h)
-    w1_gradient = np.matmul(prepend_bias(X).T, a_gradient) / X.shape[0]
+    a_gradient = np.matmul(y_hat - Y, w2[ 1: ].T) * sigmoid_gradient(h)
+    w1_gradient = np.matmul(prepend_bias(X).T, a_gradient) / X.shape[ 0 ]
 
     return (w1_gradient, w2_gradient)
 
@@ -65,8 +66,8 @@ def report(iteration, X_train, Y_train, X_test, Y_test, w1, w2):
 
 
 def train(X_train, Y_train, X_test, Y_test, n_hidden_nodes, iterations, lr):
-    n_input_variables = X_train.shape[1]
-    n_classes = Y_train.shape[1]
+    n_input_variables = X_train.shape[ 1 ]
+    n_classes = Y_train.shape[ 1 ]
     w1, w2 = initialize_weights(n_input_variables, n_hidden_nodes, n_classes)
     for iteration in range(iterations):
         y_hat, h = forward(X_train, w1, w2)
@@ -77,7 +78,6 @@ def train(X_train, Y_train, X_test, Y_test, n_hidden_nodes, iterations, lr):
     return (w1, w2)
 
 
-import mnist
 w1, w2 = train(mnist.X_train, mnist.Y_train,
                mnist.X_test, mnist.Y_test,
                n_hidden_nodes=200, iterations=10000, lr=0.01)
