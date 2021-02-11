@@ -2,6 +2,7 @@
 # except for a tiny refactoring in the back() function).
 
 import numpy as np
+np.random.seed(3)  # avoid the randomness by seeding random number generator, strove for deterministic code
 
 
 def sigmoid(z):
