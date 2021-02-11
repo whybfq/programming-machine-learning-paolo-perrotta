@@ -7,6 +7,7 @@ from matplotlib.colors import ListedColormap
 
 np.random.seed(123)  # Make this code deterministic
 
+
 def one_hot_encode(Y):
     n_labels = Y.shape[0]
     result = np.zeros((n_labels, 2))
