@@ -44,7 +44,8 @@ def classify(X, w1, w2):
     return labels.reshape(-1, 1)
 
 
-def initialize_weights(n_input_variables, n_hidden_nodes, n_classes):
+def initialize_weights(n_input_variables, n_hidden_nodes, n_classes):  # P 152
+    # the absolute value of each weight shouldn't be much bigger than the square root of the inverse of rows
     w1_rows = n_input_variables + 1
     w1 = np.random.randn(w1_rows, n_hidden_nodes) * np.sqrt(1 / w1_rows)
 

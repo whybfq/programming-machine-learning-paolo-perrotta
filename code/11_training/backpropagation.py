@@ -31,7 +31,7 @@ def forward(X, w1, w2):
     return (y_hat, h)
 
 
-def back(X, Y, y_hat, w2, h):
+def back(X, Y, y_hat, w2, h):  # backpropagation
     w2_gradient = np.matmul(prepend_bias(h).T, y_hat - Y) / X.shape[ 0 ]
 
     a_gradient = np.matmul(y_hat - Y, w2[ 1: ].T) * sigmoid_gradient(h)
