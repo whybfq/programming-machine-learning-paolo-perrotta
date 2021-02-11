@@ -53,7 +53,9 @@ def initialize_weights(n_input_variables, n_hidden_nodes, n_classes):  # P 152
     w2_rows = n_hidden_nodes + 1
     w2 = np.random.randn(w2_rows, n_classes) * np.sqrt(1 / w2_rows)
 
-    return (w1, w2)
+    # if initialize the weights to zero and accuracy will not change
+    # w1, w2 = np.zeros((w1_rows, n_hidden_nodes)), np.zeros((w2_rows, n_classes))
+    return w1, w2
 
 
 def report(iteration, X_train, Y_train, X_test, Y_test, w1, w2):
@@ -63,6 +65,7 @@ def report(iteration, X_train, Y_train, X_test, Y_test, w1, w2):
     accuracy = np.average(classifications == Y_test) * 100.0
     print("Iteration: %5d, Loss: %.8f, Accuracy: %.2f%%" %
           (iteration, training_loss, accuracy))
+    print(f"print ten rows from around the middle of w1 an w2: {w1[120:130], w2[120:130]}")
 
 
 def train(X_train, Y_train, X_test, Y_test, n_hidden_nodes, iterations, lr):
