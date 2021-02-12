@@ -12,6 +12,6 @@ In general, we should take care that the distribution of the examples is the sam
 While the production data can be challenging to deal with, there's an easy fix to make it more likely that the first three sets have a similar distribution: shuffle the data before you split it into training, validation and test sets.
 
     np.random.shuffle(data_all)
-    data_train, data_validation, data_test = np.split(data_all, [900_000, 950_000])
+    data_train, data_validation, data_test = np.split(data_all, [900_000, 950_000])  # 60/20/20 rule
 
 MNIST already comes pre-shuffled. That's why we can just go ahead, and split the test set in the middle to get a validation set.
