@@ -72,7 +72,7 @@ ax.plot_surface(W, B, L, cmap=cm.gnuplot, linewidth=0, antialiased=True)
 plt.plot([history_w[-1]], [history_b[-1]], [history_loss[-1]],
          "gX", markersize=16)
 
-# Mark startpoint and path
+# Mark start point and path
 plt.plot([history_w[0]], [history_b[0]], [history_loss[0]], "wo")
 plt.plot(history_w, history_b, history_loss, color="w",
          linestyle="dashed", linewidth=1)
