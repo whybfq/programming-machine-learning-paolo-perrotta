@@ -34,7 +34,7 @@ def train(X_train, Y_train, X_test, Y_test,
     steps = 0
     while True:
         batch = 0
-        while (batch < len(x_batches)):
+        while batch < len(x_batches):
             training_classifications, _ = nn.forward(X_train, w1, w2)
             training_loss = nn.loss(Y_train, training_classifications)
             times.append(np.floor(time.time() - start_time))
@@ -42,7 +42,7 @@ def train(X_train, Y_train, X_test, Y_test,
 
             time_passed = time.time() - start_time
             if time_passed > time_in_seconds:
-                return (times, losses, epochs, steps)
+                return times, losses, epochs, steps
 
             y_hat, h = nn.forward(x_batches[batch], w1, w2)
             w1_gradient, w2_gradient = nn.back(x_batches[batch],

@@ -80,7 +80,7 @@ def train(X_train, Y_train, X_test, Y_test, n_hidden_nodes,
 
     w1, w2 = initialize_weights(n_input_variables, n_hidden_nodes, n_classes)
     x_batches, y_batches = prepare_batches(X_train, Y_train, batch_size)
-    for epoch in range(epochs):
+    for epoch in range(epochs):  # before is iteration, now is epoch
         for batch in range(len(x_batches)):
             y_hat, h = forward(x_batches[batch], w1, w2)
             w1_gradient, w2_gradient = back(x_batches[batch], y_batches[batch],
@@ -88,7 +88,7 @@ def train(X_train, Y_train, X_test, Y_test, n_hidden_nodes,
             w1 = w1 - (w1_gradient * lr)
             w2 = w2 - (w2_gradient * lr)
             report(epoch, batch, X_train, Y_train, X_test, Y_test, w1, w2)
-    return (w1, w2)
+    return w1, w2
 
 
 if __name__ == "__main__":

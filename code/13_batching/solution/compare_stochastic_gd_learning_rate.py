@@ -16,16 +16,19 @@ cmp.plot_loss(data=mnist, n_hidden_nodes=HIDDEN_NODES,
               time_in_seconds=TIME,
               label="lr = 0.1",
               color='orange', linestyle='-')
+
 cmp.plot_loss(data=mnist, n_hidden_nodes=HIDDEN_NODES,
               batch_size=BATCH_SIZE, lr=0.01,
               time_in_seconds=TIME,
               label="lr = 0.01",
               color='green', linestyle='--')
+
 cmp.plot_loss(data=mnist, n_hidden_nodes=HIDDEN_NODES,
               batch_size=BATCH_SIZE, lr=0.001,
               time_in_seconds=TIME,
               label="lr = 0.001",
               color='blue', linestyle='-.')
+
 cmp.plot_loss(data=mnist, n_hidden_nodes=HIDDEN_NODES,
               batch_size=BATCH_SIZE, lr=0.0001,
               time_in_seconds=TIME,
