@@ -14,8 +14,8 @@ def one_hot_encode(Y):
 
 
 # Uncomment one of the next three lines to decide which dataset to load
-x1, x2, y = np.loadtxt('linearly_separable.txt', skiprows=1, unpack=True)
-# x1, x2, y = np.loadtxt('non_linearly_separable.txt', skiprows=1, unpack=True)
+# x1, x2, y = np.loadtxt('linearly_separable.txt', skiprows=1, unpack=True)
+x1, x2, y = np.loadtxt('non_linearly_separable.txt', skiprows=1, unpack=True)
 # x1, x2, y = np.loadtxt('circles.txt', skiprows=1, unpack=True)
 
 X_train = X_test = np.column_stack((x1, x2))

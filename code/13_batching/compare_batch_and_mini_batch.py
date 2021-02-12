@@ -15,6 +15,7 @@ cmp.plot_loss(data=mnist, n_hidden_nodes=HIDDEN_NODES,
               time_in_seconds=TIME,
               label="Batch GD",
               color='black', linestyle='-')
+
 cmp.plot_loss(data=mnist, n_hidden_nodes=HIDDEN_NODES,
               batch_size=256, lr=lr,
               time_in_seconds=TIME,

@@ -95,4 +95,4 @@ if __name__ == "__main__":
     import mnist as data
     w1, w2 = train(data.X_train, data.Y_train,
                    data.X_test, data.Y_test,
-                   n_hidden_nodes=200, epochs=2, batch_size=20000, lr=0.01)
+                   n_hidden_nodes=200, epochs=2, batch_size=32, lr=0.01)
