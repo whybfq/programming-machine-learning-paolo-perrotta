@@ -21,7 +21,7 @@ def standardize(training_set, test_set):
     standard_deviation = np.std(training_set)
     training_set_standardized = (training_set - average) / standard_deviation
     test_set_standardized = (test_set - average) / standard_deviation
-    return (training_set_standardized, test_set_standardized)
+    return training_set_standardized, test_set_standardized
 
 
 # X_train/X_validation/X_test: 60K/5K/5K images
