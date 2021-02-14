@@ -13,10 +13,11 @@ Y_train = to_categorical(data.Y_train)  # one-hot encode the labels with keras's
 Y_validation = to_categorical(data.Y_validation)  # behave the same as the one_hot_encode() in Part I
 
 # define the shape of the NN
-model = Sequential()
-model.add(Dense(100, activation='sigmoid'))
+model = Sequential()  # no need input layer, so have 5 layers of the NN
+# model.add(Dense(100, activation='sigmoid'))
+model.add(Dense(100, activation='sigmoid')) # first hidden layer
 model.add(Dense(30, activation='sigmoid'))
-model.add(Dense(2, activation='softmax'))
+model.add(Dense(2, activation='softmax')) # output layer
 
 model.compile(loss='categorical_crossentropy',
               optimizer=RMSprop(lr=0.001),
