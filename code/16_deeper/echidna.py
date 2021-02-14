@@ -15,7 +15,7 @@ def load(filename):
     # Rescale data between -0.5 and 0.5
     x = (x_raw - x_min) / (x_max - x_min) - 0.5
     y = data[:, 2].astype(int).reshape(-1, 1)
-    return (x, y)
+    return x, y
 
 
 current_directory = os.path.dirname(__file__)

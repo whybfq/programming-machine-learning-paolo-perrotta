@@ -9,9 +9,10 @@ import boundary
 
 X_train = data.X_train
 X_validation = data.X_validation
-Y_train = to_categorical(data.Y_train)
-Y_validation = to_categorical(data.Y_validation)
+Y_train = to_categorical(data.Y_train)  # one-hot encode the labels with keras's to_categorical()
+Y_validation = to_categorical(data.Y_validation)  # behave the same as the one_hot_encode() in Part I
 
+# define the shape of the NN
 model = Sequential()
 model.add(Dense(100, activation='sigmoid'))
 model.add(Dense(30, activation='sigmoid'))
