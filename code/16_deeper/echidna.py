@@ -1,4 +1,5 @@
-# Load the Echidna dataset.
+# Load the Echidna dataset and the label
+# split it into training, validation and test sets
 
 import os
 import numpy as np
