@@ -22,7 +22,7 @@ model.compile(loss='categorical_crossentropy',
               optimizer=RMSprop(lr=0.001),
               metrics=['accuracy'])
 
-model.fit(X_train, Y_train,
+model.fit(X_train, Y_train,  # train the NN
           validation_data=(X_validation, Y_validation),
           epochs=30000, batch_size=25)
 
