@@ -15,7 +15,8 @@ Y_train = to_categorical(data.Y_train)
 Y_validation = to_categorical(data.Y_validation)
 
 model = Sequential()
-model.add(Dense(100, activation='sigmoid', activity_regularizer=l1(0.002)))
+model.add(Dense(100, activation='sigmoid', activity_regularizer=l1(0.002)))  # learning rate too large, can not learn
+# so much, under fitting, the NN lose much of its ability to shape the boundary
 model.add(Dense(30, activation='sigmoid', activity_regularizer=l1(0.0004)))
 model.add(Dense(2, activation='softmax'))
 
