@@ -1,6 +1,6 @@
 import numpy as np
 from keras.models import Sequential
-from keras.layers import Dense
+from keras.layers import Dense, Dropout
 from keras.optimizers import SGD
 from keras.utils import to_categorical
 from keras.datasets import mnist
@@ -15,8 +15,11 @@ Y_validation, Y_test = np.split(to_categorical(Y_test_raw), 2)
 
 model = Sequential()
 model.add(Dense(1200, activation='sigmoid'))
+model.add(Dropout(0.25))  # add dropout layers on top of regular hidden layers
 model.add(Dense(500, activation='sigmoid'))
+model.add(Dropout(0.25))
 model.add(Dense(200, activation='sigmoid'))
+model.add(Dropout(0.25))
 model.add(Dense(10, activation='softmax'))
 
 model.compile(loss='categorical_crossentropy',
