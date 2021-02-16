@@ -36,7 +36,7 @@ Y_validation, Y_test = np.split(to_categorical(Y_test_raw), 2)
 
 model = Sequential()
 model.add(Dense(1200, activation='relu'))
-model.add(Dropout(0.1))
+model.add(Dropout(0.1))  # dropout is an advanced regularization
 model.add(BatchNormalization())
 model.add(Dense(500, activation='relu'))
 model.add(Dropout(0.1))
