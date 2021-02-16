@@ -1,7 +1,7 @@
 import numpy as np
 from keras.models import Sequential
-from keras.layers import Dense, BatchNormalization
-from keras.optimizers import Adam
+from keras.layers import Dense, BatchNormalization, Dropout
+from keras.optimizers import Adam, SGD, RMSprop
 from keras.utils import to_categorical
 from keras.datasets import mnist
 
@@ -36,19 +36,30 @@ Y_validation, Y_test = np.split(to_categorical(Y_test_raw), 2)
 
 model = Sequential()
 model.add(Dense(1200, activation='relu'))
+model.add(Dropout(0.1))
 model.add(BatchNormalization())
 model.add(Dense(500, activation='relu'))
-# model.add(BatchNormalization())
+model.add(Dropout(0.1))
+model.add(BatchNormalization())
 model.add(Dense(200, activation='relu'))
-# model.add(BatchNormalization())
+# model.add(Dropout(0.1))
+model.add(BatchNormalization())
 model.add(Dense(10, activation='softmax'))
 
+# model.compile(loss='categorical_crossentropy',  # SGD, learning rate decay,
+#               optimizer=SGD(lr=0.1, decay=1e-6, momentum=0.9),
+#               metrics=['accuracy'])
+
 model.compile(loss='categorical_crossentropy',
-              optimizer=Adam(),
+              optimizer=RMSprop(lr=1e-3),
               metrics=['accuracy'])
+
+# model.compile(loss='categorical_crossentropy',
+#               optimizer=Adam(),
+#               metrics=['accuracy'])
 
 history = model.fit(X_train, Y_train,
                     validation_data=(X_validation, Y_validation),
                     epochs=10, batch_size=32)
 
-# plot(history) # not suitable for here
+plot(history)
