@@ -50,13 +50,13 @@ model.add(Dense(10, activation='softmax'))
 #               optimizer=SGD(lr=0.1, decay=1e-6, momentum=0.9),
 #               metrics=['accuracy'])
 
-model.compile(loss='categorical_crossentropy',
-              optimizer=RMSprop(lr=1e-3),
-              metrics=['accuracy'])
-
 # model.compile(loss='categorical_crossentropy',
-#               optimizer=Adam(),
+#               optimizer=RMSprop(lr=1e-3),
 #               metrics=['accuracy'])
+
+model.compile(loss='categorical_crossentropy',
+              optimizer=Adam(),
+              metrics=['accuracy'])
 
 history = model.fit(X_train, Y_train,
                     validation_data=(X_validation, Y_validation),
