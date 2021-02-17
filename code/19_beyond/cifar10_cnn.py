@@ -9,6 +9,7 @@ from keras.utils import to_categorical
 from keras.datasets import cifar10
 
 (X_train_raw, Y_train_raw), (X_test_raw, Y_test_raw) = cifar10.load_data()
+# preserve image's shape in a (60000, 32, 32, 3) tensor, 60000 images , each 32 * 32 pixels with 3 color channels
 X_train = X_train_raw / 255
 X_test_all = X_test_raw / 255
 X_validation, X_test = np.split(X_test_all, 2)
